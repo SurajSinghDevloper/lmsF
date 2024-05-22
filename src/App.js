@@ -1,17 +1,15 @@
 import AuthForm from "./components/AuthForm";
 import HomePage from "./pages/HomePage";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<HomePage />}>
-          <Route path="/authentication" element={<AuthForm />} />
-          <Outlet />
-        </Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/authentication" element={<AuthForm />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
