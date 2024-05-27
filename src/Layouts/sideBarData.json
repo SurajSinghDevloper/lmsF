@@ -1,0 +1,44 @@
+[
+  {
+    "pageName": "Dashboard",
+    "icon": "MdDashboard",
+    "route": "/dashboard",
+    "status": "active"
+  },
+  {
+    "pageName": "User Profile",
+    "icon": "ImProfile",
+    "route": "/user-profile",
+    "status": "active"
+  },
+  {
+    "pageName": "Table List",
+    "icon": "LuTableProperties",
+    "route": "/table-list",
+    "status": "active"
+  },
+  {
+    "pageName": "Typography",
+    "icon": "typographyIcon",
+    "route": "/typography",
+    "status": "inactive"
+  },
+  {
+    "pageName": "Icons",
+    "icon": "iconsIcon",
+    "route": "/icons",
+    "status": "inactive"
+  },
+  {
+    "pageName": "Maps",
+    "icon": "mapsIcon",
+    "route": "/maps",
+    "status": "inactive"
+  },
+  {
+    "pageName": "Notifications",
+    "icon": "notificationsIcon",
+    "route": "/notifications",
+    "status": "inactive"
+  }
+]

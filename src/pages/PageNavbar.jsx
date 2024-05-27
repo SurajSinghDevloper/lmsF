@@ -1,19 +1,36 @@
+import { FaBarsProgress } from "react-icons/fa6";
+import { GrSearch } from "react-icons/gr";
+import { HiOutlineHome } from "react-icons/hi";
+import { LuMessageSquare } from "react-icons/lu";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
+
 const PageNavbar = () => {
   return (
-    <nav className="bg-zinc-100 dark:bg-zinc-400 p-4 flex justify-between items-center">
+    <nav className="bg-zinc-500 dark:bg-zinc-600 p-4 flex justify-between items-center">
       <div className="flex items-center space-x-4">
-        <img
-          src="https://placehold.co/40x40"
-          alt="logo"
-          className="w-10 h-10"
-        />
-        <a href="/" className="text-zinc-800 dark:text-zinc-300">
+        <FaBarsProgress className="w-10 h-10 text-white" />
+        <a href="/" className="text-zinc-800 dark:text-zinc-200 flex gap-3">
+          <span>
+            <HiOutlineHome size={20} />
+          </span>{" "}
+          Home
+        </a>
+        <a href="/" className="text-zinc-800 dark:text-zinc-200 flex gap-3">
+          <span>
+            <GrSearch size={20} />
+          </span>
           Explore
         </a>
-        <a href="/" className="text-zinc-700 dark:text-zinc-300">
+        <a href="/" className="text-zinc-700 dark:text-zinc-200 flex gap-3">
+          <span>
+            <LuMessageSquare size={20} />
+          </span>
           About
         </a>
-        <a href="/" className="text-zinc-700 dark:text-zinc-300">
+        <a href="/" className="text-zinc-700 dark:text-zinc-200 flex gap-3">
+          <span>
+            <MdOutlineConnectWithoutContact size={20} />
+          </span>
           Contact
         </a>
       </div>
