@@ -15,8 +15,6 @@ function App() {
         <Route path="/authentication" element={<AuthForm />} />
         <Route path="/landing" element={<MainLandingPage />} />
         <Route path="/layout" element={<MainLayout />} />
-        {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
-        {/* <Route path="/user-profile" element={<UserProfilePage />} /> */}
         <Route path="*" element={<RenderPages />} />
       </Routes>
     </Router>
