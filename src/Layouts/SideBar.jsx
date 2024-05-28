@@ -41,7 +41,7 @@ const SideBar = () => {
             <li
               key={item.pageName}
               className={`flex items-center p-2 cursor-pointer ${
-                item.status === "active" ? "text-orange-500" : ""
+                item.status === "active" ? "text-slate-800": ""
               }`}
             >
               {icons[item.icon]}
