@@ -114,7 +114,7 @@ function AuthForm() {
             />
             <input
               type="password"
-              placeholder="Your mobile"
+              placeholder="Your password"
               className="border p-2 rounded-l-lg w-1/2"
             />
           </div>
