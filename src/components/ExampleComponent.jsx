@@ -20,7 +20,7 @@ const ExampleComponent = () => {
             <h1>Data:</h1>
             <ul>
                 {data.map((item) => (
-                    <li  key={item.id}>{item.movie}</li>
+                    <li key={item.id}>{item.movie}</li>
                 ))}
             </ul>
         </div>
