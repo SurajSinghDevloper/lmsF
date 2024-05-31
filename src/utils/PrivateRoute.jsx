@@ -2,10 +2,10 @@ import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import { getCookie } from "../utils/Cookies";
 
-const PrivateRoute = ({ isAuthenticated }) => {
+const PrivateRoute = () => {
     const token = getCookie("token");
 
-    return isAuthenticated && token ? <Outlet /> : <Navigate to="/authentication" />;
+    return token ? <Outlet /> : <Navigate to="/authentication" />;
 };
 
 export default PrivateRoute;
