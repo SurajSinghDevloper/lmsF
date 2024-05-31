@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/authentication" element={<AuthForm />} />
         <Route element={<PrivateRoute isAuthenticated={login.authenticate} />}>
-          <Route path="/landing" element={<MainLandingPage />} />
+          <Route path="/features" element={<MainLandingPage />} />
           <Route path="/layout" element={<MainLayout />} />
           <Route path="*" element={<RenderPages />} />
         </Route>

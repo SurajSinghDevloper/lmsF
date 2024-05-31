@@ -3,8 +3,14 @@ import { GrSearch } from "react-icons/gr";
 import { HiOutlineHome } from "react-icons/hi";
 import { LuMessageSquare } from "react-icons/lu";
 import { MdOutlineConnectWithoutContact } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { logoutAction } from "../Redux/Actions/LoginAction";
 
 const PageNavbar = () => {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logoutAction());
+  }
   return (
     <nav className="bg-zinc-500 dark:bg-zinc-600 p-4 flex justify-between items-center">
       <div className="flex items-center space-x-4">
@@ -34,7 +40,7 @@ const PageNavbar = () => {
           Contact
         </a>
       </div>
-      <button className="bg-red-500 text-white px-4 py-2 rounded-full flex items-center space-x-2">
+      <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded-full flex items-center space-x-2">
         <span>&larr;</span>
         <span>Log-OUT</span>
       </button>

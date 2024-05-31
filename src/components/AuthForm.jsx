@@ -29,7 +29,7 @@ function AuthForm() {
 
   useEffect(() => {
     if (login.authenticate) {
-      navigate('/landing');
+      navigate('/features');
     }
   }, [login.authenticate, navigate]);
 
