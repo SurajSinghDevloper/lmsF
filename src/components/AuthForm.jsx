@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { FaGoogle } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaGoogle, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { HiChevronDoubleRight } from "react-icons/hi2";
 import auth from "../assets/Downpic.png";
@@ -8,15 +7,16 @@ import schoolImg from "../assets/schoolImgAuth.png";
 import { PiSignInBold } from "react-icons/pi";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { IoHomeOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { signupAction } from '../Redux/Actions/SignupAction';
 import { loginAction } from "../Redux/Actions/LoginAction";
 
 function AuthForm() {
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector((state) => state.signup);
-  const [isLogin, setIsLogin] = useState(true)
+  const login = useSelector((state) => state.login);
+  const [isLogin, setIsLogin] = useState(true);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -27,6 +27,12 @@ function AuthForm() {
     address: ''
   });
 
+  useEffect(() => {
+    if (login.authenticate) {
+      navigate('/landing');
+    }
+  }, [login.authenticate, navigate]);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -35,26 +41,17 @@ function AuthForm() {
     });
   };
 
-
-  const handleSubmit = (isLogin) => {
+  const handleSubmit = () => {
     if (isLogin) {
-      const email = formData.email;
-      const password = formData.password;
-      const data = { email, password }
-      dispatch(loginAction(data));
-
+      const { email, password } = formData;
+      dispatch(loginAction({ email, password }));
     } else {
       dispatch(signupAction(formData));
     }
   };
 
   const handleFormState = (type) => {
-    if (type == "login") {
-      setIsLogin(true)
-    } else {
-
-      setIsLogin(false)
-    }
+    setIsLogin(type === "login");
   }
 
   return (
@@ -67,8 +64,7 @@ function AuthForm() {
           <div className="flex flex-col-1 space-x-2">
             <HiChevronDoubleRight className="h-9 w-12" />
             <p className="font-semibold mt-1 text-l">
-              Discover, compare, shortlist your preferred schools, and much
-              more.
+              Discover, compare, shortlist your preferred schools, and much more.
             </p>
           </div>
           <div className="flex flex-col-1 space-x-2">
@@ -80,15 +76,13 @@ function AuthForm() {
           <div className="flex flex-col-1 space-x-2">
             <HiChevronDoubleRight className="h-9 w-12" />
             <p className="font-semibold mt-1 text-l">
-              Stay up to date with admissions, fees structures, facilities and
-              much more.
+              Stay up to date with admissions, fees structures, facilities and much more.
             </p>
           </div>
           <div className="flex flex-col-1 space-x-2">
             <HiChevronDoubleRight className="h-9 w-12" />
             <p className="font-semibold mt-1 text-l">
-              Lakhs of parents trust us for our industry-leading free counseling
-              services.
+              Lakhs of parents trust us for our industry-leading free counseling services.
             </p>
           </div>
         </div>
@@ -101,24 +95,21 @@ function AuthForm() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center  md:w-3/4">
+      <div className="flex flex-col items-center md:w-3/4">
         <div className="flex justify-end w-full mr-10 p-2">
-          <button onClick={() => handleFormState("signup")} className="text-blue-600 border-2 border-black rounded-lg  p-2  mr-4 flex justify-center text-xl">
+          <button onClick={() => handleFormState("signup")} className="text-blue-600 border-2 border-black rounded-lg p-2 mr-4 flex justify-center text-xl">
             <span>
               <AiOutlineUserAdd className="h-8 w-8" />
             </span>
             Sign up
           </button>
-          <button onClick={() => handleFormState("login")} className="text-green-800 border-2 border-black rounded-lg p-2  mr-4 flex justify-center text-xl">
+          <button onClick={() => handleFormState("login")} className="text-green-800 border-2 border-black rounded-lg p-2 mr-4 flex justify-center text-xl">
             <span>
               <PiSignInBold className="h-8 w-8" />
             </span>
             Log in
           </button>
-          <Link
-            to={"/"}
-            className="text-zinc-500 border-2 border-black rounded-lg p-2  mr-4 flex justify-center text-xl"
-          >
+          <Link to={"/"} className="text-zinc-500 border-2 border-black rounded-lg p-2 mr-4 flex justify-center text-xl">
             <span>
               <IoHomeOutline className="h-8 w-8" />
             </span>
@@ -129,7 +120,6 @@ function AuthForm() {
         <hr className="w-3/12" />
         <div className="w-2/3 mt-10">
           {!isLogin &&
-
             <div className="flex mt-4 space-x-4">
               <input
                 type="text"
@@ -150,7 +140,6 @@ function AuthForm() {
             </div>
           }
           <div className={`flex ${!isLogin ? "mt-4 space-x-4" : "justify-center"}`}>
-
             <input
               type="email"
               placeholder="Your email"
@@ -188,7 +177,6 @@ function AuthForm() {
               className="border p-2 rounded-l-lg w-1/2"
               onChange={handleChange}
               value={formData.password}
-
             />
           </div>
           {!isLogin &&
@@ -204,15 +192,12 @@ function AuthForm() {
             </div>
           }
         </div>
-
-        <button onClick={() => handleSubmit(isLogin)} disabled={loading} className="bg-zinc-800 text-white py-2 px-4 rounded-lg mt-10">
-          {!isLogin ? "Sign Up" : "Login"} {loading && <i className="fas fa-spinner fa-spin"></i>}
-
-
+        <button onClick={handleSubmit} disabled={login.loading} className="bg-zinc-800 text-white py-2 px-4 rounded-lg mt-10">
+          {!isLogin ? "Sign Up" : "Login"} {login.loading && <i className="fas fa-spinner fa-spin"></i>}
         </button>
-        {loading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {data && <p>Sign up successful!</p>}
+        {login.loading && <p>Loading...</p>}
+        {login.error && <p>Error: {login.error}</p>}
+        {login.data && <p>Sign up successful!</p>}
         <div className="flex items-center mt-4">
           <hr className="flex-grow border-t border-zinc-300" />
           <span className="px-2 text-zinc-500">OR</span>
