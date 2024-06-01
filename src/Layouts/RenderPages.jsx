@@ -2,11 +2,13 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import DashboardPage from "../pages/DashboardPage";
 import UserProfilePage from "../pages/UserProfilePage";
-import TableListPage from "../pages/TableListPage";
 import sideBarData from "./sideBarData.json"; // Import the JSON file
 import MainLayout from "./MainLayout"; // Import MainLayout component
+import ClassAndSeatDetails from "../components/Tables/ClassAndSeatDetails";
+import DataTable from "../components/Tables/DataTable";
+import UnthorizeAccessPage from "../pages/UnthorizeAccessPage";
 
-const Unauthorized = () => <div>Unauthorized Access</div>;
+const Unauthorized = () => <div><UnthorizeAccessPage /></div>;
 
 const RenderPages = () => {
   return (
@@ -28,7 +30,6 @@ const RenderPages = () => {
           )
         )}
       </Route>
-      {/* <Route path="*" element={<Navigate to="/dashboard" />} /> */}
     </Routes>
   );
 };
@@ -40,7 +41,9 @@ const getPageComponent = (pageName) => {
     case "User Profile":
       return <UserProfilePage />;
     case "Table List":
-      return <TableListPage />;
+      return <DataTable />;
+    case "Class Detials":
+      return <ClassAndSeatDetails />;
     default:
       return <Unauthorized />;
   }

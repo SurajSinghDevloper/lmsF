@@ -4,11 +4,13 @@ import { MdDashboard } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { LuTableProperties } from "react-icons/lu";
 import sideBarData from "./sideBarData.json"; // Import the JSON file
+import { SiGoogleclassroom } from "react-icons/si";
 
 const icons = {
   MdDashboard: <MdDashboard size={30} className="mr-2" />,
   ImProfile: <ImProfile size={30} className="mr-2" />,
   LuTableProperties: <LuTableProperties size={30} className="mr-2" />,
+  classDeatils: <SiGoogleclassroom size={30} className="mr-2" />,
   typographyIcon: (
     <img
       src="https://placehold.co/20x20"
@@ -40,9 +42,8 @@ const SideBar = () => {
           {sideBarData.map((item) => (
             <li
               key={item.pageName}
-              className={`flex items-center p-2 cursor-pointer ${
-                item.status === "active" ? "text-slate-800": ""
-              }`}
+              className={`flex items-center p-2 cursor-pointer ${item.status === "active" ? "text-slate-800" : ""
+                }`}
             >
               {icons[item.icon]}
               <Link to={item.route}>{item.pageName.toUpperCase()}</Link>

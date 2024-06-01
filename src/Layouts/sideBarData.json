@@ -8,7 +8,7 @@
   {
     "pageName": "User Profile",
     "icon": "ImProfile",
-    "route": "/user-profile",
+    "route": "/addmission-portal/user-profile",
     "status": "active"
   },
   {
@@ -18,10 +18,10 @@
     "status": "active"
   },
   {
-    "pageName": "Typography",
-    "icon": "typographyIcon",
-    "route": "/addmission-portal/typography",
-    "status": "inactive"
+    "pageName": "Class Detials",
+    "icon": "classDeatils",
+    "route": "/addmission-portal/class-details",
+    "status": "active"
   },
   {
     "pageName": "Icons",
