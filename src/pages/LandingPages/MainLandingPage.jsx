@@ -20,13 +20,13 @@ const MainLandingPage = () => {
   return (
     <>
       <PageNavbar />
-      <div className="flex space-x-9 justify-center w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="flex justify-center w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           <div className="p-2">
             <LandingPageCards
               title="Admission Portal"
               description="Managing admissions comprehensively, covering all admission components."
-              link="#"
+              type="Admission"
               icon={HiOutlineBookmarkAlt}
             />
           </div>
@@ -34,7 +34,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Admit Card Services"
               description="Issuing of admit cards class-wise and managing the admit card process."
-              link="#"
+              type="AdmitCard"
               icon={IoNewspaperOutline}
             />
           </div>
@@ -42,7 +42,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Examination Portal"
               description="Examination portal for marks uploading and managing examinations."
-              link="#"
+              type="Examination"
               icon={FaBookOpenReader}
             />
           </div>
@@ -50,7 +50,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Result Portal"
               description="Result portal for Declaring the Result class wise and managing Result Declaration"
-              link="#"
+              type="Result"
               icon={FaSheetPlastic}
             />
           </div>
@@ -58,7 +58,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Staff Management"
               description="Effective staff management optimizes productivity and fosters a positive work environment."
-              link="#"
+              type="Staff"
               icon={BsPeople}
             />
           </div>
@@ -66,7 +66,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Library Management"
               description="Effective library management enhances service quality and promotes a welcoming atmosphere."
-              link="#"
+              type="Library"
               icon={TbBooks}
             />
           </div>
@@ -74,7 +74,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Bus Services Management"
               description="Bus service management ensures efficient operations and enhances customer satisfaction."
-              link="#"
+              type="Bus"
               icon={GiBus}
             />
           </div>
@@ -82,6 +82,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Student Services"
               description="Efficient student management enhances performance and cultivates a conducive learning atmosphere."
+              type="Student"
               icon={FcBusinessman}
             />
           </div>
@@ -89,7 +90,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Class Services and Management"
               description="Effective Class Management boost academic achievement and create effective campus atmosphere."
-              link="#"
+              type="ClassServices"
               icon={SiGoogleclassroom}
             />
           </div>
@@ -97,7 +98,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Certificates"
               description="Streamlined student certificate distribution enhances operational efficiency and cultivates a conducive academic ambiance."
-              link="#"
+              type="Certificates"
               icon={MdOutlineClass}
             />
           </div>
@@ -105,7 +106,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Accounts Services"
               description="Streamlined student certificate distribution enhances operational efficiency and cultivates a conducive academic ambiance."
-              link="#"
+              type="Accounts"
               icon={MdOutlineAccountBalanceWallet}
             />
           </div>
@@ -113,7 +114,7 @@ const MainLandingPage = () => {
             <LandingPageCards
               title="Record  House"
               description="Organized record room management enhances procedural efficiency and fosters a conducive academic environment."
-              link="#"
+              type="Record"
               icon={FaRegFolderOpen}
             />
           </div>

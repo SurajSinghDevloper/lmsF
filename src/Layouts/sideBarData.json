@@ -2,7 +2,7 @@
   {
     "pageName": "Dashboard",
     "icon": "MdDashboard",
-    "route": "/dashboard",
+    "route": "/addmission-portal/dashboard",
     "status": "active"
   },
   {
@@ -14,31 +14,31 @@
   {
     "pageName": "Table List",
     "icon": "LuTableProperties",
-    "route": "/table-list",
+    "route": "/addmission-portal/table-list",
     "status": "active"
   },
   {
     "pageName": "Typography",
     "icon": "typographyIcon",
-    "route": "/typography",
+    "route": "/addmission-portal/typography",
     "status": "inactive"
   },
   {
     "pageName": "Icons",
     "icon": "iconsIcon",
-    "route": "/icons",
+    "route": "/addmission-portal/icons",
     "status": "inactive"
   },
   {
     "pageName": "Maps",
     "icon": "mapsIcon",
-    "route": "/maps",
+    "route": "/addmission-portal/maps",
     "status": "inactive"
   },
   {
     "pageName": "Notifications",
     "icon": "notificationsIcon",
-    "route": "/notifications",
+    "route": "/addmission-portal/notifications",
     "status": "inactive"
   }
 ]
