@@ -7,6 +7,9 @@ import MainLayout from "./MainLayout"; // Import MainLayout component
 import ClassAndSeatDetails from "../components/Tables/ClassAndSeatDetails";
 import DataTable from "../components/Tables/DataTable";
 import UnthorizeAccessPage from "../pages/UnthorizeAccessPage";
+import TotalCandidateApplied from "../components/Tables/TotalCandidateApplied";
+import SelectedCandidateList from "../components/Tables/SelectedCandidateList";
+import RejectedCandidateList from "../components/Tables/RejectedCandidateList";
 
 const Unauthorized = () => <div><UnthorizeAccessPage /></div>;
 
@@ -44,6 +47,12 @@ const getPageComponent = (pageName) => {
       return <DataTable />;
     case "Class Detials":
       return <ClassAndSeatDetails />;
+    case "Total Candidate Applied":
+      return <TotalCandidateApplied />;
+    case "Selected Candidate":
+      return <SelectedCandidateList />;
+    case "Rejected Candidate":
+      return <RejectedCandidateList />;
     default:
       return <Unauthorized />;
   }

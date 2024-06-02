@@ -24,16 +24,34 @@
     "status": "active"
   },
   {
-    "pageName": "Icons",
-    "icon": "iconsIcon",
-    "route": "/addmission-portal/icons",
-    "status": "inactive"
+    "pageName": "Total Candidate Applied",
+    "icon": "totalCandidateApplied",
+    "route": "/addmission-portal/applied-candidate",
+    "status": "active"
   },
   {
-    "pageName": "Maps",
-    "icon": "mapsIcon",
-    "route": "/addmission-portal/maps",
-    "status": "inactive"
+    "pageName": "Selected Candidate",
+    "icon": "selectedCandidate",
+    "route": "/addmission-portal/selected-candidate",
+    "status": "active"
+  },
+  {
+    "pageName": "Rejected Candidate",
+    "icon": "rejectedCandidate",
+    "route": "/addmission-portal/rejected-candidate",
+    "status": "active"
+  },
+  {
+    "pageName": "Publish Result",
+    "icon": "publisResult",
+    "route": "/addmission-portal/publish-result",
+    "status": "active"
+  },
+  {
+    "pageName": "Publish Event",
+    "icon": "publisEvent",
+    "route": "/addmission-portal/publish-event",
+    "status": "active"
   },
   {
     "pageName": "Notifications",
