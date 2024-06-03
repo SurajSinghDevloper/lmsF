@@ -10,6 +10,8 @@ import UnthorizeAccessPage from "../pages/UnthorizeAccessPage";
 import TotalCandidateApplied from "../components/Tables/TotalCandidateApplied";
 import SelectedCandidateList from "../components/Tables/SelectedCandidateList";
 import RejectedCandidateList from "../components/Tables/RejectedCandidateList";
+import AddmissionResult from "../components/Tables/AddmissionResult";
+import ExamPortalEventForm from "../components/ExamPortalEventForm";
 
 const Unauthorized = () => <div><UnthorizeAccessPage /></div>;
 
@@ -53,6 +55,10 @@ const getPageComponent = (pageName) => {
       return <SelectedCandidateList />;
     case "Rejected Candidate":
       return <RejectedCandidateList />;
+    case "Publish Result":
+      return <AddmissionResult />;
+    case "Publish Event":
+      return <ExamPortalEventForm />;
     default:
       return <Unauthorized />;
   }

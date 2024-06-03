@@ -4,10 +4,12 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   return (
-    <div className="flex h-screen bg-zinc-100 dark:bg-zinc-200">
-      <SideBar />
-      <main className="flex-1 p-6">
-        <header className="flex justify-between items-center mb-6">
+    <div className="flex gap-4 h-screen w-full bg-zinc-100 dark:bg-zinc-200">
+      <div className="flex-1 h-screen w-[15%]">
+        <SideBar />
+      </div>
+      <main className="flex-2 mr-2 w-[85%]">
+        <header className="flex justify-between items-center mb-6 position:fixed z-10">
           <h1 className="text-2xl font-bold">Dashboard</h1>
           <div className="flex items-center space-x-4">
             <span>Stats</span>
@@ -16,7 +18,9 @@ const MainLayout = () => {
           </div>
         </header>
         <section className="w-full">
-          <Outlet />
+          <div className="fixed h-[90%] w-[85%] scrollbar-hide overflow-y-scroll">
+            <Outlet />
+          </div>
         </section>
       </main>
     </div>

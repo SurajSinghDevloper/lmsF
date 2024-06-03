@@ -25,7 +25,7 @@ const icons = {
 
 const SideBar = () => {
   return (
-    <aside className="w-64 bg-white dark:bg-zinc-100 shadow-md">
+    <aside className="w-full h-full bg-white dark:bg-zinc-100 shadow-md ">
       <div className="p-4 font-bold text-lg">CREATIVE TIM</div>
       <nav className="mt-4">
         <ul>
