@@ -12,7 +12,7 @@ const PageNavbar = () => {
     dispatch(logoutAction());
   }
   return (
-    <nav className="bg-zinc-500 dark:bg-zinc-600 p-4 flex justify-between items-center">
+    <nav className="bg-zinc-300 dark:bg-[rgb(113 113 122 / 52%)] p-4 flex justify-between items-center">
       <div className="flex items-center space-x-4">
         <FaBarsProgress className="w-10 h-10 text-white" />
         <a href="/" className="text-zinc-800 dark:text-zinc-200 flex gap-3">

@@ -1,13 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { MdDashboard, MdOutlineEventNote } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { LuTableProperties } from "react-icons/lu";
-import sideBarData from "./sideBarData.json"; // Import the JSON file
+import { addmission, admitCard } from "./sideBarData"; // Import the JSON file
 import { SiGoogleclassroom } from "react-icons/si";
 import { FaPeopleLine } from "react-icons/fa6";
 import { LiaNewspaperSolid } from "react-icons/lia";
 import { MdOutlineNotificationsActive } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 
 const icons = {
@@ -24,12 +25,27 @@ const icons = {
 };
 
 const SideBar = () => {
+  const pageType = useSelector((state) => state.pageType)
+  const [dataToRender, setDataToRender] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    switch (pageType) {
+      case 'Admission':
+        setDataToRender(addmission)
+        break;
+      case 'AdmitCard':
+        setDataToRender(admitCard)
+        break;
+      default:
+        navigate('/features')
+    }
+  }, [pageType])
   return (
     <aside className="w-full h-full bg-white dark:bg-zinc-100 shadow-md ">
       <div className="p-4 font-bold text-lg">CREATIVE TIM</div>
       <nav className="mt-4">
         <ul>
-          {sideBarData.map((item) => (
+          {dataToRender.map((item) => (
             <li
               key={item.pageName}
               className={`flex items-center p-2 cursor-pointer ${item.status === "active" ? "text-slate-800" : ""

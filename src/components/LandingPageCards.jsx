@@ -16,7 +16,7 @@ const LandingPageCards = ({ title, description, icon: Icon, type }) => {
         break;
       case "AdmitCard":
         dispatch(setPageType(type));
-        navigate('/dashboard');
+        navigate('/admit-card/dashboard');
         break;
       case "Examination":
         dispatch(setPageType(type));
