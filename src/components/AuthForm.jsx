@@ -56,7 +56,7 @@ function AuthForm() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-5 h-screen">
-      <div className="bg-gradient-to-b from-red-700 to-red-900 text-white p-8 md:col-span-1">
+      <div className="hidden md:block bg-gradient-to-b from-red-700 to-red-900 text-white p-8 md:col-span-1">
         <div className="flex justify-center mb-10">
           <img src={auth} alt="icon" className="h-20 w-30" />
         </div>
@@ -86,7 +86,7 @@ function AuthForm() {
             </p>
           </div>
           <div className="mt-2">
-            <img src={schoolImg} alt="schollImg" />
+            <img src={schoolImg} alt="schoolImg" />
             <div className="text-center mt-2">
               <p className="text-xl font-semibold text-white">
                 Saint Xavier University
@@ -95,8 +95,8 @@ function AuthForm() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center md:col-span-4">
-        <div className="flex justify-end w-full mr-2 mt-2">
+      <div className="flex flex-col items-center md:col-span-4 p-4 md:p-8">
+        <div className="flex justify-end w-full mb-4">
           <button onClick={() => handleFormState("signup")} className="text-blue-600 border-2 p-2 border-black rounded-lg mr-3 flex items-center text-l">
             <AiOutlineUserAdd size={20} />
             Sign up
@@ -105,16 +105,20 @@ function AuthForm() {
             <PiSignInBold size={20} />
             Log in
           </button>
-          <Link to={"/"} className="text-zinc-500 border-2 border-black rounded-lg p-2 mr-4 flex items-center text-l">
+          <Link to={"/"} className="text-zinc-500 border-2 border-black rounded-lg p-2 flex items-center text-l">
             <IoHomeOutline size={20} />
             Home
           </Link>
         </div>
-        <h2 className="text-3xl font-bold">{isLogin ? "Login to Continue" : "Register to Continue"}</h2>
-        <hr className="w-3/12" />
-        <div className={`w-2/3 mt-10 ${isLogin ? "ml-[32%]" : ""}`}>
+        {/* <h2 className="text-3xl font-bold mb-2">{isLogin ? "Login to Continue" : "Register to Continue"}</h2> */}
+        <h2 className={`text-3xl font-bold mb-2 ${!isLogin ? "sm:ml-10" : ""}`}>
+          {isLogin ? "Login to Continue" : "Register to Continue"}
+        </h2>
+
+        <hr className="w-3/12 mb-4" />
+        <div className={`w-full max-w-lg ${isLogin ? "md:w-1/2" : ""}`}>
           {!isLogin &&
-            <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <input
                 type="text"
                 placeholder="Your first name"
@@ -133,7 +137,7 @@ function AuthForm() {
               />
             </div>
           }
-          <div className={`grid ${!isLogin ? "grid-cols-2  gap-4 mt-4" : "grid-cols-1 w-1/2 justify-center"}`}>
+          <div className={`grid grid-cols-1 ${!isLogin ? "md:grid-cols-2 gap-4 mb-4" : "md:w-2/3 mx-auto mb-4"}`}>
             <input
               type="email"
               placeholder="Your email"
@@ -153,7 +157,7 @@ function AuthForm() {
               />
             }
           </div>
-          <div className={`grid ${!isLogin ? "grid-cols-2 gap-4 mt-4" : "grid-cols-1 w-1/2  justify-center mt-5"}`}>
+          <div className={`grid grid-cols-1 ${!isLogin ? "md:grid-cols-2 gap-4 mb-4" : "md:w-2/3 mx-auto mb-4"}`}>
             {!isLogin &&
               <input
                 type="date"
@@ -174,7 +178,7 @@ function AuthForm() {
             />
           </div>
           {!isLogin &&
-            <div className="grid mt-4  ">
+            <div className="grid mb-4">
               <input
                 type="text"
                 placeholder="Your address"
@@ -186,18 +190,17 @@ function AuthForm() {
             </div>
           }
         </div>
-        <button onClick={handleSubmit} disabled={login.loading} className="bg-zinc-800 text-white py-2 px-4 rounded-lg mt-10">
+        <button onClick={handleSubmit} disabled={login.loading} className="bg-zinc-800 text-white py-2 px-4 rounded-lg mb-4">
           {!isLogin ? "Sign Up" : "Login"} {login.loading && <i className="fas fa-spinner fa-spin"></i>}
         </button>
         {login.loading && <p>Loading...</p>}
-        {/* {login.error && <p>Error: {login.error}</p>} */}
         {login.data && <p>Sign up successful!</p>}
-        <div className="flex items-center mt-4">
+        <div className="flex items-center mt-4 mb-4">
           <hr className="flex-grow border-t border-zinc-300" />
           <span className="px-2 text-zinc-500">OR</span>
           <hr className="flex-grow border-t border-zinc-300" />
         </div>
-        <div className="flex space-x-4 mt-4">
+        <div className="flex space-x-4 mb-4">
           <button className="bg-white p-2 rounded-full shadow">
             <FaWhatsapp className="h-12 w-12" />
           </button>
@@ -214,3 +217,6 @@ function AuthForm() {
 }
 
 export default AuthForm;
+
+
+
