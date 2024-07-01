@@ -7,11 +7,12 @@ import { FaMapMarked } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
 import { Link } from "react-router-dom";
 
+
 function HomeFeature() {
   return (
     <div className="text-center py-8">
       <h2 className="text-xl font-bold text-teal-800 mb-4">FEATURED LINKS</h2>
-      <div className="flex justify-center items-center space-x-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-center items-center">
         <div className="flex flex-col items-center">
           <div className="bg-white rounded-full shadow-md p-4">
             <LuMenuSquare className="w-12 h-12" />
@@ -32,6 +33,7 @@ function HomeFeature() {
             Faculty and Staff Directory
           </p>
         </div>
+
         <div className="flex flex-col items-center">
           <div className="bg-white rounded-full shadow-md p-4">
             <FaCalendarAlt className="w-12 h-12" />

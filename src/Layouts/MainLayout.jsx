@@ -1,8 +1,13 @@
 import React from "react";
 import SideBar from "./SideBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import { Button } from "@nextui-org/react";
 
 const MainLayout = () => {
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate("/features")
+  }
   return (
     <div className="flex gap-4 h-screen w-full bg-zinc-100 dark:bg-zinc-200">
       <div className="flex-1 h-screen w-[15%]">
@@ -15,6 +20,7 @@ const MainLayout = () => {
             <span>Stats</span>
             <span>5 Notifications</span>
             <span>Settings</span>
+            <Button variant='bordered' onClick={handleBack} color='danger' className="mt-2 h-8"> Back To Main</Button>
           </div>
         </header>
         <section className="w-full">
