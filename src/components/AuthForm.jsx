@@ -96,7 +96,7 @@ function AuthForm() {
         </div>
       </div>
       <div className="flex flex-col items-center md:col-span-4 p-4 md:p-8">
-        <div className="flex justify-end w-full mb-4">
+        <div className="flex justify-end w-full -mt-6">
           <button onClick={() => handleFormState("signup")} className="text-blue-600 border-2 p-2 border-black rounded-lg mr-3 flex items-center text-l">
             <AiOutlineUserAdd size={20} />
             Sign up
@@ -110,7 +110,6 @@ function AuthForm() {
             Home
           </Link>
         </div>
-        {/* <h2 className="text-3xl font-bold mb-2">{isLogin ? "Login to Continue" : "Register to Continue"}</h2> */}
         <h2 className={`text-3xl font-bold mb-2 ${!isLogin ? "sm:ml-10" : ""}`}>
           {isLogin ? "Login to Continue" : "Register to Continue"}
         </h2>

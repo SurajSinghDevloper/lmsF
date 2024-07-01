@@ -8,6 +8,7 @@ import MainLayout from "./Layouts/MainLayout";
 import RenderPages from "./Layouts/RenderPages";
 import PrivateRoute from "./utils/PrivateRoute";
 import { isUserLoggedIn } from "./Redux/Actions/LoginAction";
+import AddmissionPage from "./pages/addmission/AddmissionPage";
 
 function App() {
   const login = useSelector((state) => state.login);
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/authentication" element={<AuthForm />} />
+        <Route path="/addmission" element={<AddmissionPage />} />
         <Route element={<PrivateRoute />}>
           <Route path="/features" element={<MainLandingPage />} />
           <Route path="/layout" element={<MainLayout />} />

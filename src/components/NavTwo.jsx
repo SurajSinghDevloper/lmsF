@@ -2,7 +2,7 @@ import React from 'react';
 
 function NavTwo() {
   return (
-    <nav className="bg-zinc-900 text-white p-4">
+    <nav className="bg-zinc-700 text-white p-4">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
         <div className="flex items-center mb-4 md:mb-0">
           <img src="https://placehold.co/50x50" alt="School Logo" className="h-10 w-10 mr-3" />
@@ -13,7 +13,7 @@ function NavTwo() {
         </div>
         <ul className="flex flex-wrap justify-center md:justify-end space-x-4">
           <li className="mb-2 md:mb-0">
-            <a href="/" className="hover:text-zinc-400">
+            <a href="/addmission" className="hover:text-zinc-400">
               Admission
             </a>
           </li>

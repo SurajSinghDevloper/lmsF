@@ -6,7 +6,7 @@ import { LuSchool } from "react-icons/lu";
 
 function Footer() {
   return (
-    <footer className="bg-zinc-900 dark:bg-zinc-900 text-white dark:text-white py-6">
+    <footer className="bg-zinc-700 dark:bg-zinc-700 text-white dark:text-white py-1">
       <div className="container mx-auto text-center">
         <div className="mb-4 flex flex-row  space-x-5">
           <LuSchool className="h-16 w-16" />
