@@ -1,7 +1,9 @@
 import React from 'react';
-import NavTwo from '../../components/NavTwo';
-import Footer from '../../components/Footer';
 
+
+import { Input, Select, SelectItem } from '@nextui-org/react';
+import NavTwo from '../../Layouts/NavTwo';
+import Footer from '../../Layouts/Footer';
 const AddmissionPage = () => {
     return (
         <>
@@ -9,36 +11,41 @@ const AddmissionPage = () => {
             <div className="bg-[#204562] text-white p-2 rounded-t-lg text-center mb-2 mt-2">
                 <h2 className="text-lg font-bold">Our Toppers 2024</h2>
             </div>
-            <div className="grid grid-cols-6  gap-4">
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-4">
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2" />
-                    <span>Scholarships</span>
+                    <img src="https://placehold.co/50x50" alt="Aman Dubey" className="mb-2" />
+                    <span>Aman Dubey</span>
+                    <span>Class 12</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2" />
-                    <span>Scholarships</span>
+                    <img src="https://placehold.co/50x50" alt="Simran Kaur" className="mb-2" />
+                    <span>Simran Kaur</span>
+                    <span>Class 11</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2" />
-                    <span>Scholarships</span>
+                    <img src="https://placehold.co/50x50" alt="Kriti Singh" className="mb-2" />
+                    <span>Kriti Singh</span>
+                    <span>Class 12</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2" />
-                    <span>Scholarships</span>
+                    <img src="https://placehold.co/50x50" alt="Deewakar Singh" className="mb-2" />
+                    <span>Deewakar Singh</span>
+                    <span>Class 11</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2" />
-                    <span>Scholarships</span>
+                    <img src="https://placehold.co/50x50" alt="Omkar Sharma" className="mb-2" />
+                    <span>Omkar Sharma</span>
+                    <span>Class 9</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2" />
-                    <span>Scholarships</span>
+                    <img src="https://placehold.co/50x50" alt="Palavi Singh" className="mb-2" />
+                    <span>Palavi Singh</span>
+                    <span>Class 10</span>
                 </div>
             </div>
             <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg">
                 <div className="w-full md:w-1/3 p-4">
-                    <h2 className="text-xl font-semibold mb-4">How we helps you in Admission</h2>
+                    <h2 className="text-xl font-semibold mb-4">How we help you in Admission</h2>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
                             <img src="https://placehold.co/50x50" alt="Brochure Details" className="mb-2" />
@@ -66,7 +73,6 @@ const AddmissionPage = () => {
                         </div>
                     </div>
                 </div>
-
                 <div className="w-full md:w-2/3 p-4">
                     <div className="flex items-center mb-4">
                         <img src="https://placehold.co/50x50" alt="University Logo" className="rounded-full mr-4" />
@@ -77,27 +83,53 @@ const AddmissionPage = () => {
                     </div>
                     <form className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="flex items-center border border-zinc-300 rounded-lg p-2">
-                                <img src="https://placehold.co/20x20" alt="Full Name Icon" className="mr-2" />
-                                <input type="text" placeholder="Full Name *" className="w-full border-none focus:ring-0" />
-                            </div>
-                            <div className="flex items-center border border-zinc-300 rounded-lg p-2">
-                                <img src="https://placehold.co/20x20" alt="Email Address Icon" className="mr-2" />
-                                <input type="email" placeholder="Email Address *" className="w-full border-none focus:ring-0" />
-                            </div>
-                            <div className="flex items-center border border-zinc-300 rounded-lg p-2">
-                                <span className="mr-2">+91</span>
-                                <img src="https://placehold.co/20x20" alt="Mobile Number Icon" className="mr-2" />
-                                <input type="text" placeholder="Mobile Number *" className="w-full border-none focus:ring-0" />
-                            </div>
-                            <div className="flex items-center border border-zinc-300 rounded-lg p-2">
-                                <img src="https://placehold.co/20x20" alt="City Icon" className="mr-2" />
-                                <input type="text" placeholder="City You Live In *" className="w-full border-none focus:ring-0" />
-                            </div>
-                            <div className="flex items-center border border-zinc-300 rounded-lg p-2 col-span-1 md:col-span-2">
-                                <img src="https://placehold.co/20x20" alt="Course Icon" className="mr-2" />
-                                <input type="text" placeholder="Course Interested In *" className="w-full border-none focus:ring-0" />
-                            </div>
+                            <Input
+                                type="text"
+                                label="Name"
+                                labelPlacement={"outside"}
+                                placeholder="Name"
+                                width="full"
+                            />
+                            <Input
+                                type="email"
+                                label="Email"
+                                labelPlacement={"outside"}
+                                placeholder="Email"
+                                width="full"
+                            />
+                            <Input
+                                type="tel"
+                                label="Mobile"
+                                labelPlacement={"outside"}
+                                placeholder="Mobile"
+                                width="full"
+                            />
+                            <Input
+                                type="text"
+                                label="Address"
+                                labelPlacement={"outside"}
+                                placeholder="Address"
+                                width="full"
+                            />
+                            <Select
+                                size="sm"
+                                label="Select Class"
+                                className="max-w-xs"
+                            >
+                                <SelectItem>Class I</SelectItem>
+                                <SelectItem>Class II</SelectItem>
+                                <SelectItem>Class III</SelectItem>
+                                <SelectItem>Class IV</SelectItem>
+                                <SelectItem>Class V</SelectItem>
+                                <SelectItem>Class VI</SelectItem>
+                                <SelectItem>Class VII</SelectItem>
+                                <SelectItem>Class VIII</SelectItem>
+                                <SelectItem>Class IX</SelectItem>
+                                <SelectItem>Class X</SelectItem>
+                                <SelectItem>Class XI</SelectItem>
+                                <SelectItem>Class XII</SelectItem>
+
+                            </Select>
                         </div>
                         <p className="text-sm text-zinc-600">By submitting this form, you accept and agree to our <a href="#" className="text-blue-500">Terms of Use</a>.</p>
                         <p className="text-sm text-orange-500">Already Registered? <a href="#" className="text-blue-500">Click Here To Login.</a></p>

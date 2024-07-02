@@ -24,11 +24,6 @@ function NavTwo() {
           </li>
           <li className="mb-2 md:mb-0">
             <a href="/" className="hover:text-zinc-400">
-              Tuition & Aid
-            </a>
-          </li>
-          <li className="mb-2 md:mb-0">
-            <a href="/" className="hover:text-zinc-400">
               Student Life
             </a>
           </li>

@@ -1,10 +1,24 @@
-import { Button } from '@nextui-org/react'
+
 import React from 'react'
 import { totalStdList } from '../../../commonJson'
-import HorizontalBar from '../reusableComponent/HorizontalBar'
+import HorizontalBar from '../../components/reusableComponent/HorizontalBar'
+import ReusableTable from '../../components/reusableComponent/ReusableTable'
 
 const TotalCandidateApplied = () => {
 
+    const columns = [
+        { header: "Student Name", accessor: "studentName" },
+        { header: "Father Name", accessor: "fatherName" },
+        { header: "Mobile No.", accessor: "mobile" },
+        { header: "Marks Scored", accessor: "marksScored" },
+        { header: "Applied For", accessor: "appliedFor" },
+        { header: "Seats Avilable", accessor: "seatsAvailable" },
+    ];
+
+    const actions = [
+        { label: "View", color: "primary", handler: (item) => console.log("View", item) },
+        { label: "Reject", color: "danger", handler: (item) => console.log("Reject", item) }
+    ];
     return (
         <>
             <HorizontalBar title={"Total Applied Students"} />
@@ -64,50 +78,8 @@ const TotalCandidateApplied = () => {
                     </button>
                 </div>
             </form>
-
-
-
-
-
-
-
-
-
-
-
-
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white dark:bg-zinc-200">
-                    <thead>
-                        <tr className="w-full bg-zinc-200 dark:bg-zinc-300">
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Student Name</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Father Name</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Mobile No</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Marks Scored</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Applied For</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Seat Available</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {totalStdList.map((item, index) => (
-                            <tr key={index} className="border-b border-zinc-200 dark:border-zinc-700">
-                                <td className="py-2 px-4 text-center">{item.studentName}</td>
-                                <td className="py-2 px-4 text-center">{item.fatherName}</td>
-                                <td className="py-2 px-4 text-center">{item.mobile}</td>
-                                <td className="py-2 px-4 text-center">{item.marksScored}</td>
-                                <td className="py-2 px-4 text-center">{item.appliedFor}</td>
-                                <td className="py-2 px-4 text-center">{item.seatsAvailable}</td>
-                                <td className="py-2 justify-center flex gap-3">
-                                    <Button color="primary" variant="bordered">View</Button>
-                                    <Button color="danger" variant="bordered">Reject</Button>
-                                </td>
-                            </tr>
-                        ))}
-
-
-                    </tbody>
-                </table>
+                <ReusableTable columns={columns} data={totalStdList} actions={actions} />
             </div>
         </>
     )

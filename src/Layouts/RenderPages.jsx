@@ -4,15 +4,15 @@ import DashboardPage from "../pages/DashboardPage";
 import UserProfilePage from "../pages/UserProfilePage";
 import { addmission, admitCard } from "./sideBarData"; // Import the JSON file
 import MainLayout from "./MainLayout"; // Import MainLayout component
-import ClassAndSeatDetails from "../components/Tables/ClassAndSeatDetails";
-import DataTable from "../components/Tables/DataTable";
+import DataTable from "../pages/examination/DataTable";
 import UnthorizeAccessPage from "../pages/UnthorizeAccessPage";
-import TotalCandidateApplied from "../components/Tables/TotalCandidateApplied";
-import SelectedCandidateList from "../components/Tables/SelectedCandidateList";
-import RejectedCandidateList from "../components/Tables/RejectedCandidateList";
-import AddmissionResult from "../components/Tables/AddmissionResult";
+import TotalCandidateApplied from "../pages/examination/TotalCandidateApplied";
+import SelectedCandidateList from "../pages/examination/SelectedCandidateList";
+import RejectedCandidateList from "../pages/examination/RejectedCandidateList";
 import ExamPortalEventForm from "../components/ExamPortalEventForm";
 import { useSelector } from "react-redux";
+import AddmissionResult from "../pages/examination/AddmissionResult";
+import ClassAndSeatDetails from "../pages/examination/ClassAndSeatDetails";
 
 const Unauthorized = () => <div><UnthorizeAccessPage /></div>;
 

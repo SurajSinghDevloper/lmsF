@@ -1,6 +1,7 @@
 import React from 'react'
 
-import HorizontalBar from '../reusableComponent/HorizontalBar'
+import ReusableTable from '../../components/reusableComponent/ReusableTable';
+import HorizontalBar from '../../components/reusableComponent/HorizontalBar';
 
 const ClassAndSeatDetails = () => {
     const data = [
@@ -78,34 +79,18 @@ const ClassAndSeatDetails = () => {
         }
     ]
 
+    const columns = [
+        { header: "Class Name", accessor: "className" },
+        { header: "Class Teacher", accessor: "classTeacher" },
+        { header: "Total Seats", accessor: "totalSeats" },
+        { header: "Available Seats", accessor: "seatAvailable" },
+        { header: "Occupied Seats", accessor: (item) => item.totalSeats - item.seatAvailable }
+    ];
     return (
         <>
             <HorizontalBar title={"Class Details"} />
             <div className="overflow-x-auto mt-5">
-                <table className="min-w-full bg-white dark:bg-zinc-200">
-                    <thead>
-                        <tr className="w-full bg-zinc-200 dark:bg-zinc-300">
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Class Name</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Class Teacher</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Total Seats</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Available Seats</th>
-                            <th className="py-2 px-4 text-center text-blue-600 dark:text-blue-400">Occupied Seats</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((item, index) => (
-                            <tr key={index} className="border-b border-zinc-200 dark:border-zinc-700">
-                                <td className="py-2 px-4 text-center">{item.className}</td>
-                                <td className="py-2 px-4 text-center">{item.classTeacher}</td>
-                                <td className="py-2 px-4 text-center">{item.totalSeats}</td>
-                                <td className="py-2 px-4 text-center">{item.seatAvailable}</td>
-                                <td className="py-2 px-4 text-center">{item.totalSeats - item.seatAvailable}</td>
-
-                            </tr>
-                        ))}
-
-                    </tbody>
-                </table>
+                <ReusableTable columns={columns} data={data} />
             </div>
         </>
 
