@@ -1,6 +1,4 @@
-import React from 'react';
-
-
+import React, { useState } from 'react';
 import { Input, Select, SelectItem } from '@nextui-org/react';
 import NavTwo from '../../Layouts/NavTwo';
 import Footer from '../../Layouts/Footer';
@@ -11,8 +9,38 @@ import img4 from '../../../temp/img/image.jfif'
 import img5 from '../../../temp/img/imagee.jfif'
 import img6 from '../../../temp/img/images.jpg'
 import { schoolName } from '../../../temp/data/commonJson';
+import { classList } from '../../../temp/data/AppData';
 
 const AddmissionPage = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        mobile: '',
+        address: '',
+        selectedClass: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSelectChange = (e) => {
+        setFormData({
+            ...formData,
+            selectedClass: e.target.value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here
+        console.log(formData);
+        // You can make an API call or other actions here
+    };
     return (
         <>
             <NavTwo />
@@ -89,7 +117,7 @@ const AddmissionPage = () => {
                             <p className="text-zinc-700">{schoolName}, Ranchi</p>
                         </div>
                     </div>
-                    <form className="space-y-4">
+                    {/* <form className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <Input
                                 type="text"
@@ -141,6 +169,67 @@ const AddmissionPage = () => {
                         </div>
                         <p className="text-sm text-zinc-600">By submitting this form, you accept and agree to our <a href="#" className="text-blue-500">Terms of Use</a>.</p>
                         <p className="text-sm text-orange-500">Already Registered? <a href="#" className="text-blue-500">Click Here To Login.</a></p>
+                        <button type="submit" className="w-full md:w-auto bg-orange-500 text-white py-2 px-4 rounded-lg">SUBMIT</button>
+                    </form> */}
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <Input
+                                type="text"
+                                label="Name"
+                                labelPlacement="outside"
+                                placeholder="Name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                width="full"
+                            />
+                            <Input
+                                type="email"
+                                label="Email"
+                                labelPlacement="outside"
+                                placeholder="Email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                width="full"
+                            />
+                            <Input
+                                type="tel"
+                                label="Mobile"
+                                labelPlacement="outside"
+                                placeholder="Mobile"
+                                name="mobile"
+                                value={formData.mobile}
+                                onChange={handleChange}
+                                width="full"
+                            />
+                            <Input
+                                type="text"
+                                label="Address"
+                                labelPlacement="outside"
+                                placeholder="Address"
+                                name="address"
+                                value={formData.address}
+                                onChange={handleChange}
+                                width="full"
+                            />
+                            <Select
+                                size="sm"
+                                label="Select Class"
+                                className="max-w-xs"
+                                name="selectedClass"
+                                value={formData.selectedClass}
+                                onChange={handleSelectChange}
+                            >
+                                {classList.map((cls) => (
+                                    <SelectItem key={cls.classValue} value={cls.classValue} textValue={`Class ${cls.className}`}>
+                                        Class {cls.className}
+                                    </SelectItem>
+                                ))}
+                            </Select>
+                        </div>
+                        <p className="text-sm text-zinc-600">By submitting this form, you accept and agree to our <a href="/student-login" className="text-blue-500">Terms of Use</a>.</p>
+                        <p className="text-sm text-orange-500">Already Registered? <a href="/student-login" className="text-blue-500">Click Here To Login.</a></p>
                         <button type="submit" className="w-full md:w-auto bg-orange-500 text-white py-2 px-4 rounded-lg">SUBMIT</button>
                     </form>
                 </div>
