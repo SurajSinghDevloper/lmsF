@@ -47,11 +47,14 @@ function HomeFeature() {
           <p className="mt-2 text-sm text-red-700">Campus Maps</p>
         </div>
         <div className="flex flex-col items-center">
-          <div className="bg-white rounded-full shadow-md p-4">
-            <IoMdExit className="w-12 h-12" />
-          </div>
+
           <Link to={"/authentication"} className="mt-2 text-sm text-red-700">
-            mySXU Portal
+            <span>
+              <div className="bg-white rounded-full shadow-md p-4">
+                <IoMdExit className="w-12 h-12" />
+              </div>
+            </span>
+            My  Portal
           </Link>
         </div>
       </div>

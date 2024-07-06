@@ -11,6 +11,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { signupAction } from '../Redux/Actions/SignupAction';
 import { loginAction } from "../Redux/Actions/LoginAction";
+import { schoolName } from "../../temp/data/commonJson";
+import { Spinner } from "@nextui-org/react";
+import { Toaster, toast } from 'sonner'
 
 function AuthForm() {
   const dispatch = useDispatch();
@@ -42,18 +45,31 @@ function AuthForm() {
   };
 
   const handleSubmit = () => {
-    if (isLogin) {
-      const { email, password } = formData;
-      dispatch(loginAction({ email, password }));
-    } else {
-      dispatch(signupAction(formData));
-    }
+    toast.promise(new Promise((resolve) => setTimeout(() => resolve({ name: 'Sonner' }), 2000)), {
+      loading: 'Loading...',
+      success: () => {
+        if (isLogin) {
+          const { email, password } = formData;
+          dispatch(loginAction({ email, password }));
+        } else {
+          dispatch(signupAction(formData));
+        }
+        return login.authenticate ? " Login Successful" : "Invalid Credential";
+      },
+      error: 'Error',
+    });
   };
 
   const handleFormState = (type) => {
     setIsLogin(type === "login");
-  }
+  };
 
+  // useEffect(() => {
+  //   if (login.data) {
+  //     console.log(login.data);
+  //     toast.success("Login Successful", { duration: 3000 });
+  //   }
+  // }, [login.data]);
   return (
     <div className="grid grid-cols-1 md:grid-cols-5 h-screen">
       <div className="hidden md:block bg-gradient-to-b from-red-700 to-red-900 text-white p-8 md:col-span-1">
@@ -89,7 +105,7 @@ function AuthForm() {
             <img src={schoolImg} alt="schoolImg" />
             <div className="text-center mt-2">
               <p className="text-xl font-semibold text-white">
-                Saint Xavier University
+                {schoolName}
               </p>
             </div>
           </div>
@@ -192,8 +208,9 @@ function AuthForm() {
         <button onClick={handleSubmit} disabled={login.loading} className="bg-zinc-800 text-white py-2 px-4 rounded-lg mb-4">
           {!isLogin ? "Sign Up" : "Login"} {login.loading && <i className="fas fa-spinner fa-spin"></i>}
         </button>
-        {login.loading && <p>Loading...</p>}
-        {login.data && <p>Sign up successful!</p>}
+        {login.loading && <Spinner label="Please Wait !" color="warning" labelColor="primary" />}
+        <Toaster richColors position="top-right" />
+        {/* {login.data && <Toaster />} */}
         <div className="flex items-center mt-4 mb-4">
           <hr className="flex-grow border-t border-zinc-300" />
           <span className="px-2 text-zinc-500">OR</span>

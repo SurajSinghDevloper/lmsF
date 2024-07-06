@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import HorizontalBar from '../../components/reusableComponent/HorizontalBar'
 import SearchForm from '../../components/reusableComponent/SearchForm'
-import { selectedStdList } from '../../../commonJson'
+import { selectedStdList } from '../../../temp/data/commonJson'
 import ReusableTable from '../../components/reusableComponent/ReusableTable'
 
 const SelectedCandidateList = () => {

@@ -4,6 +4,14 @@ import React from 'react';
 import { Input, Select, SelectItem } from '@nextui-org/react';
 import NavTwo from '../../Layouts/NavTwo';
 import Footer from '../../Layouts/Footer';
+import img1 from '../../../temp/img/GARVITA.jpg'
+import img2 from '../../../temp/img/girls.avif'
+import img3 from '../../../temp/img/imag.jpg'
+import img4 from '../../../temp/img/image.jfif'
+import img5 from '../../../temp/img/imagee.jfif'
+import img6 from '../../../temp/img/images.jpg'
+import { schoolName } from '../../../temp/data/commonJson';
+
 const AddmissionPage = () => {
     return (
         <>
@@ -13,32 +21,32 @@ const AddmissionPage = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-4">
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Aman Dubey" className="mb-2" />
+                    <img src={img1} alt="Aman Dubey" className="mb-2 w-40 h-40 object-cover" />
                     <span>Aman Dubey</span>
                     <span>Class 12</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Simran Kaur" className="mb-2" />
+                    <img src={img2} alt="Simran Kaur" className="mb-2 w-40 h-40 object-cover" />
                     <span>Simran Kaur</span>
                     <span>Class 11</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Kriti Singh" className="mb-2" />
+                    <img src={img4} alt="Kriti Singh" className="mb-2 w-40 h-40 object-cover" />
                     <span>Kriti Singh</span>
                     <span>Class 12</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Deewakar Singh" className="mb-2" />
+                    <img src={img3} alt="Deewakar Singh" className="mb-2 w-40 h-40 object-cover" />
                     <span>Deewakar Singh</span>
                     <span>Class 11</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Omkar Sharma" className="mb-2" />
+                    <img src={img5} alt="Omkar Sharma" className="mb-2 w-40 h-40 object-cover" />
                     <span>Omkar Sharma</span>
                     <span>Class 9</span>
                 </div>
                 <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                    <img src="https://placehold.co/50x50" alt="Palavi Singh" className="mb-2" />
+                    <img src={img6} alt="Palavi Singh" className="mb-2 w-40 h-40 object-cover" />
                     <span>Palavi Singh</span>
                     <span>Class 10</span>
                 </div>
@@ -48,29 +56,29 @@ const AddmissionPage = () => {
                     <h2 className="text-xl font-semibold mb-4">How we help you in Admission</h2>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                            <img src="https://placehold.co/50x50" alt="Brochure Details" className="mb-2" />
+                            <img src="https://placehold.co/50x50" alt="Brochure Details" className="mb-2 w-40 h-40 object-cover" />
                             <span>Brochure Details</span>
                         </div>
                         <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                            <img src="https://placehold.co/50x50" alt="Check Detailed Fees" className="mb-2" />
+                            <img src="https://placehold.co/50x50" alt="Check Detailed Fees" className="mb-2 w-40 h-40 object-cover" />
                             <span>Check Detailed Fees</span>
                         </div>
                         <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                            <img src="https://placehold.co/50x50" alt="Shortlist & Apply" className="mb-2" />
+                            <img src="https://placehold.co/50x50" alt="Shortlist & Apply" className="mb-2 w-40 h-40 object-cover" />
                             <span>Shortlist & Apply</span>
                         </div>
                         <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                            <img src="https://placehold.co/50x50" alt="24/7 Counselling" className="mb-2" />
+                            <img src="https://placehold.co/50x50" alt="24/7 Counselling" className="mb-2 w-40 h-40 object-cover" />
                             <span>24/7 Counselling</span>
                         </div>
-                        <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                            <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2" />
+                        {/* <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
+                            <img src="https://placehold.co/50x50" alt="Scholarships" className="mb-2 w-40 h-40 object-cover" />
                             <span>Scholarships</span>
                         </div>
                         <div className="flex flex-col items-center p-4 bg-zinc-100 rounded-lg">
-                            <img src="https://placehold.co/50x50" alt="Application Deadlines" className="mb-2" />
+                            <img src="https://placehold.co/50x50" alt="Application Deadlines" className="mb-2 w-40 h-40 object-cover" />
                             <span>Application Deadlines</span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="w-full md:w-2/3 p-4">
@@ -78,7 +86,7 @@ const AddmissionPage = () => {
                         <img src="https://placehold.co/50x50" alt="University Logo" className="rounded-full mr-4" />
                         <div>
                             <h2 className="text-2xl font-bold text-orange-500">Register Now To Apply</h2>
-                            <p className="text-zinc-700">St. Xavier College - [SXC], Ranchi</p>
+                            <p className="text-zinc-700">{schoolName}, Ranchi</p>
                         </div>
                     </div>
                     <form className="space-y-4">

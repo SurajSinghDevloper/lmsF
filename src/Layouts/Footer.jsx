@@ -3,6 +3,7 @@ import { FiFacebook } from "react-icons/fi";
 import { CiTwitter } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { LuSchool } from "react-icons/lu";
+import { schoolName } from "../../temp/data/commonJson";
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
         <div className="mb-4 flex flex-row  space-x-5">
           <LuSchool className="h-16 w-16" />
           <div className="mt-6">
-            <h1 className="text-2xl font-semibold">Saint Xavier University</h1>
+            <h1 className="text-2xl font-semibold">{schoolName}</h1>
           </div>
         </div>
         <div className="flex justify-center space-x-4 mb-4">

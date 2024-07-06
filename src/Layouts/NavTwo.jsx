@@ -1,4 +1,5 @@
 import React from 'react';
+import { schoolName } from '../../temp/data/commonJson';
 
 function NavTwo() {
   return (
@@ -7,8 +8,8 @@ function NavTwo() {
         <div className="flex items-center mb-4 md:mb-0">
           <img src="https://placehold.co/50x50" alt="School Logo" className="h-10 w-10 mr-3" />
           <div>
-            <h1 className="text-xl font-bold">SaintXavier</h1>
-            <p className="text-sm">UNIVERSITY</p>
+            <h1 className="text-xl font-bold">{schoolName}</h1>
+            <p className="text-sm">C.B.S.E.</p>
           </div>
         </div>
         <ul className="flex flex-wrap justify-center md:justify-end space-x-4">
@@ -35,6 +36,11 @@ function NavTwo() {
           <li className="mb-2 md:mb-0">
             <a href="/" className="hover:text-zinc-400">
               About
+            </a>
+          </li>
+          <li className="mb-2 md:mb-0">
+            <a href="/" className="hover:text-zinc-400">
+              Home
             </a>
           </li>
         </ul>

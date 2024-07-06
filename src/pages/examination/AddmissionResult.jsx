@@ -1,7 +1,7 @@
 // import { Button } from '@nextui-org/react'
 import React from 'react'
 import HorizontalBar from '../../components/reusableComponent/HorizontalBar'
-import { classdata } from '../../../commonJson'
+import { classdata } from '../../../temp/data/commonJson'
 import ReusableTable from '../../components/reusableComponent/ReusableTable'
 
 const AddmissionResult = () => {

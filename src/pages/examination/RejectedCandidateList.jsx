@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import HorizontalBar from '../../components/reusableComponent/HorizontalBar'
 import SearchForm from '../../components/reusableComponent/SearchForm'
-import { classdata } from '../../../commonJson'
-import { rejectedStudentList } from '../../../commonJson'
+import { classdata } from '../../../temp/data/commonJson'
+import { rejectedStudentList } from '../../../temp/data/commonJson'
 import ReusableTable from '../../components/reusableComponent/ReusableTable'
 
 const RejectedCandidateList = () => {

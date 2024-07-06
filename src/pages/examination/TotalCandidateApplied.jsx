@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { totalStdList } from '../../../commonJson'
+import { totalStdList } from '../../../temp/data/commonJson'
 import HorizontalBar from '../../components/reusableComponent/HorizontalBar'
 import ReusableTable from '../../components/reusableComponent/ReusableTable'
 

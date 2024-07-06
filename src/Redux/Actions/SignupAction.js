@@ -1,8 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import lmsBaseUrl from "./BaseUrlConfig";
+
 export const signupAction = createAsyncThunk(
   "Action/signupAction",
   async (payload) => {
-    const response = await fetch("http://localhost:8080/api/v1/auth/signup", {
+    const response = await fetch(`${lmsBaseUrl}/api/v1/auth/lmsb/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

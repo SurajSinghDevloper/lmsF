@@ -1,3 +1,4 @@
+const schoolName = "Your School Name";
 const classdata = [
   {
     className: "1",
@@ -393,4 +394,10 @@ const totalStdList = [
     seatsAvailable: "10",
   },
 ];
-export { classdata, rejectedStudentList, selectedStdList, totalStdList };
+export {
+  classdata,
+  rejectedStudentList,
+  selectedStdList,
+  totalStdList,
+  schoolName,
+};
