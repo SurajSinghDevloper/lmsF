@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setCookie, setUserCookie, getCookie } from "../../utils/Cookies";
+import { toast } from "sonner";
 
 // Action to handle login
 export const loginAction = createAsyncThunk(
@@ -18,6 +19,7 @@ export const loginAction = createAsyncThunk(
       );
 
       if (!response.ok) {
+        toast.error("Login Failed !");
         throw new Error("Network response was not ok");
       }
 
@@ -29,6 +31,7 @@ export const loginAction = createAsyncThunk(
         localStorage.setItem("user", JSON.stringify(user));
         setCookie("token", "Bearer " + accessToken, 1);
         setUserCookie("user", user, 1);
+        toast.success("Login successful!");
       }
 
       return data;

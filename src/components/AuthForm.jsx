@@ -13,7 +13,7 @@ import { signupAction } from '../Redux/Actions/SignupAction';
 import { loginAction } from "../Redux/Actions/LoginAction";
 import { schoolName } from "../../temp/data/commonJson";
 import { Spinner } from "@nextui-org/react";
-import { Toaster, toast } from 'sonner'
+import { Toaster } from 'sonner'
 import { isAdministrativeUser, isStudentUser } from "../utils/PermessionChecker";
 import { setPageType } from "../Redux/Slices/PageTypeSlice";
 
@@ -57,19 +57,16 @@ function AuthForm() {
   };
 
   const handleSubmit = () => {
-    toast.promise(new Promise((resolve) => setTimeout(() => resolve({ name: 'Sonner' }), 2000)), {
-      loading: 'Loading...',
-      success: () => {
-        if (isLogin) {
-          const { email, password } = formData;
-          dispatch(loginAction({ email, password }));
-        } else {
-          dispatch(signupAction(formData));
-        }
-        return login.authenticate ? " Login Successful" : "Invalid Credential";
-      },
-      error: 'Error',
-    });
+
+
+    if (isLogin) {
+      const { email, password } = formData;
+      dispatch(loginAction({ email, password }));
+    } else {
+      dispatch(signupAction(formData));
+    }
+
+
   };
 
   const handleFormState = (type) => {

@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import AddmissionResult from "../pages/examination/AddmissionResult";
 import ClassAndSeatDetails from "../pages/examination/ClassAndSeatDetails";
 import StudentLandingPage from "../pages/studentPannel/StudentLandingPage";
+import AddmissionForm from "../pages/addmission/AddmissionForm";
 
 const Unauthorized = () => <div><UnthorizeAccessPage /></div>;
 
@@ -84,6 +85,8 @@ const getPageComponent = (pageName) => {
       return <DashboardPage />;
     case "Student Dashboard":
       return <StudentLandingPage />;
+    case "Student Addmission Form":
+      return <AddmissionForm />;
     default:
       return <Unauthorized />;
   }

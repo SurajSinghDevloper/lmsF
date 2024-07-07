@@ -1,12 +1,19 @@
 import React from 'react'
-import PageNavbar from '../PageNavbar'
 import SideBar from '../../Layouts/SideBar'
 import { Outlet } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { Button } from '@nextui-org/react';
+import { logoutAction } from '../../Redux/Actions/LoginAction';
 
 function StudentLandingPage() {
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logoutAction());
+    };
     return (
         <>
-            <PageNavbar />
+            {/* <PageNavbar /> */}
             <div className="flex gap-4 h-screen w-full bg-zinc-100 dark:bg-zinc-200">
                 <div className="flex-1 h-screen w-[15%]">
                     <SideBar />
@@ -18,7 +25,7 @@ function StudentLandingPage() {
                             <span>Stats</span>
                             <span>5 Notifications</span>
                             <span>Settings</span>
-                            {/* <Button variant='bordered' onClick={handleBack} color='danger' className="mt-2 h-8"> Back To Main</Button> */}
+                            <Button variant='bordered' onClick={handleLogout} color='danger' className="mt-2 h-8">Logout</Button>
                         </div>
                     </header>
                     <section className="w-full">
