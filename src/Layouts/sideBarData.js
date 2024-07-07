@@ -75,4 +75,19 @@ const admitCard = [
     status: "inactive",
   },
 ];
-export { addmission, admitCard };
+
+const studentPannel = [
+  {
+    pageName: "Student Dashboard",
+    icon: "MdDashboard",
+    route: "/student/dashboard",
+    status: "active",
+  },
+  {
+    pageName: "Notifications",
+    icon: "notificationsIcon",
+    route: "/student-pannel/notifications",
+    status: "inactive",
+  },
+];
+export { addmission, admitCard, studentPannel };

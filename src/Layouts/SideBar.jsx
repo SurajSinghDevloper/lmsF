@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdDashboard, MdOutlineEventNote } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { LuTableProperties } from "react-icons/lu";
-import { addmission, admitCard } from "./sideBarData"; // Import the JSON file
+import { addmission, admitCard, studentPannel } from "./sideBarData"; // Import the JSON file
 import { SiGoogleclassroom } from "react-icons/si";
 import { FaPeopleLine } from "react-icons/fa6";
 import { LiaNewspaperSolid } from "react-icons/lia";
@@ -35,6 +35,9 @@ const SideBar = () => {
         break;
       case 'AdmitCard':
         setDataToRender(admitCard)
+        break;
+      case 'Student':
+        setDataToRender(studentPannel)
         break;
       default:
         navigate('/features')

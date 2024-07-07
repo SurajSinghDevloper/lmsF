@@ -14,6 +14,8 @@ import { loginAction } from "../Redux/Actions/LoginAction";
 import { schoolName } from "../../temp/data/commonJson";
 import { Spinner } from "@nextui-org/react";
 import { Toaster, toast } from 'sonner'
+import { isAdministrativeUser, isStudentUser } from "../utils/PermessionChecker";
+import { setPageType } from "../Redux/Slices/PageTypeSlice";
 
 function AuthForm() {
   const dispatch = useDispatch();
@@ -30,9 +32,19 @@ function AuthForm() {
     address: ''
   });
 
+
   useEffect(() => {
+    const handleNavigation = () => {
+      if (isAdministrativeUser(login)) {
+        navigate('/features');
+      } else if (isStudentUser(login)) {
+        dispatch(setPageType("Student"));
+        navigate('/student/dashboard');
+      }
+    };
+
     if (login.authenticate) {
-      navigate('/features');
+      handleNavigation();
     }
   }, [login.authenticate, navigate]);
 
@@ -64,12 +76,7 @@ function AuthForm() {
     setIsLogin(type === "login");
   };
 
-  // useEffect(() => {
-  //   if (login.data) {
-  //     console.log(login.data);
-  //     toast.success("Login Successful", { duration: 3000 });
-  //   }
-  // }, [login.data]);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-5 h-screen">
       <div className="hidden md:block bg-gradient-to-b from-red-700 to-red-900 text-white p-8 md:col-span-1">
@@ -206,7 +213,8 @@ function AuthForm() {
           }
         </div>
         <button onClick={handleSubmit} disabled={login.loading} className="bg-zinc-800 text-white py-2 px-4 rounded-lg mb-4">
-          {!isLogin ? "Sign Up" : "Login"} {login.loading && <i className="fas fa-spinner fa-spin"></i>}
+          {!isLogin ? "Sign Up" : "Login"}
+          {login.loading && <i className="fas fa-spinner fa-spin"></i>}
         </button>
         {login.loading && <Spinner label="Please Wait !" color="warning" labelColor="primary" />}
         <Toaster richColors position="top-right" />

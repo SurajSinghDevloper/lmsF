@@ -10,6 +10,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import { isUserLoggedIn } from "./Redux/Actions/LoginAction";
 import AddmissionPage from "./pages/addmission/AddmissionPage";
 import StudentLogin from "./pages/addmission/StudentLogin";
+import StudentLandingPage from "./pages/studentPannel/StudentLandingPage";
 
 function App() {
   const login = useSelector((state) => state.login);
@@ -30,6 +31,7 @@ function App() {
         <Route path="/student-login" element={<StudentLogin />} />
         <Route element={<PrivateRoute />}>
           <Route path="/features" element={<MainLandingPage />} />
+          <Route path="/student/dashboard" element={<StudentLandingPage />} />
           <Route path="/layout" element={<MainLayout />} />
           <Route path="*" element={<RenderPages />} />
         </Route>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import DashboardPage from "../pages/DashboardPage";
 import UserProfilePage from "../pages/UserProfilePage";
-import { addmission, admitCard } from "./sideBarData"; // Import the JSON file
+import { addmission, admitCard, studentPannel } from "./sideBarData"; // Import the JSON file
 import MainLayout from "./MainLayout"; // Import MainLayout component
 import DataTable from "../pages/examination/DataTable";
 import UnthorizeAccessPage from "../pages/UnthorizeAccessPage";
@@ -13,6 +13,7 @@ import ExamPortalEventForm from "../components/ExamPortalEventForm";
 import { useSelector } from "react-redux";
 import AddmissionResult from "../pages/examination/AddmissionResult";
 import ClassAndSeatDetails from "../pages/examination/ClassAndSeatDetails";
+import StudentLandingPage from "../pages/studentPannel/StudentLandingPage";
 
 const Unauthorized = () => <div><UnthorizeAccessPage /></div>;
 
@@ -27,6 +28,9 @@ const RenderPages = () => {
         break;
       case 'AdmitCard':
         setDataToRender(admitCard)
+        break;
+      case 'Student':
+        setDataToRender(studentPannel)
         break;
       default:
         navigate('/features')
@@ -59,8 +63,6 @@ const RenderPages = () => {
 const getPageComponent = (pageName) => {
   switch (pageName) {
     case "Dashboard":
-
-      console.log("PAGE NAME-====>", pageName)
       return <DashboardPage />;
     case "User Profile":
       return <UserProfilePage />;
@@ -80,6 +82,8 @@ const getPageComponent = (pageName) => {
       return <ExamPortalEventForm />;
     case "Admit Card Dashboard":
       return <DashboardPage />;
+    case "Student Dashboard":
+      return <StudentLandingPage />;
     default:
       return <Unauthorized />;
   }
