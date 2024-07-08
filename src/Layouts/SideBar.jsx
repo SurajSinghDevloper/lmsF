@@ -3,10 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdDashboard, MdOutlineEventNote } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { LuTableProperties } from "react-icons/lu";
-import { addmission, admitCard, studentPannel } from "./sideBarData"; // Import the JSON file
+import { addmission, admitCard, studentPannel, UNVERIFIED_STUDENT } from "./sideBarData"; // Import the JSON file
 import { SiGoogleclassroom } from "react-icons/si";
 import { FaPeopleLine } from "react-icons/fa6";
 import { LiaNewspaperSolid } from "react-icons/lia";
+import { SiReacthookform } from "react-icons/si";
+
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { useSelector } from "react-redux";
 
@@ -22,6 +24,7 @@ const icons = {
   publisResult: <LiaNewspaperSolid size={30} className="mr-2" />,
   publisEvent: <MdOutlineEventNote size={30} className="mr-2" />,
   notificationsIcon: <MdOutlineNotificationsActive size={30} className="mr-2" />,
+  addmission: <SiReacthookform size={30} className="mr-2" />,
 };
 
 const SideBar = () => {
@@ -29,6 +32,7 @@ const SideBar = () => {
   const [dataToRender, setDataToRender] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
+    console.log("===>>>>>>>>>>>===", pageType)
     switch (pageType) {
       case 'Admission':
         setDataToRender(addmission)
@@ -38,6 +42,9 @@ const SideBar = () => {
         break;
       case 'Student':
         setDataToRender(studentPannel)
+        break;
+      case 'UNVERIFIED_STUDENT':
+        setDataToRender(UNVERIFIED_STUDENT)
         break;
       default:
         navigate('/features')

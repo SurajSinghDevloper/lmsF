@@ -34,19 +34,15 @@ function AuthForm() {
 
 
   useEffect(() => {
-    const handleNavigation = () => {
-      if (isAdministrativeUser(login)) {
-        navigate('/features');
-      } else if (isStudentUser(login)) {
-        dispatch(setPageType("Student"));
-        navigate('/student/dashboard');
-      }
-    };
-
-    if (login.authenticate) {
-      handleNavigation();
+    if (!login.authenticate) return;
+    if (isAdministrativeUser(login)) {
+      navigate('/features');
+    } else if (isStudentUser(login)) {
+      const pageType = login.user.userType === "UNVERIFIED_STUDENT" ? "UNVERIFIED_STUDENT" : "Student";
+      dispatch(setPageType(pageType));
+      navigate('/student/dashboard');
     }
-  }, [login.authenticate, navigate]);
+  }, [login.authenticate, navigate, dispatch, login]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;

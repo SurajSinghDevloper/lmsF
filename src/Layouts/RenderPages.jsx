@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import DashboardPage from "../pages/DashboardPage";
 import UserProfilePage from "../pages/UserProfilePage";
-import { addmission, admitCard, studentPannel } from "./sideBarData"; // Import the JSON file
+import { addmission, admitCard, studentPannel, UNVERIFIED_STUDENT } from "./sideBarData"; // Import the JSON file
 import MainLayout from "./MainLayout"; // Import MainLayout component
 import DataTable from "../pages/examination/DataTable";
 import UnthorizeAccessPage from "../pages/UnthorizeAccessPage";
@@ -32,6 +32,9 @@ const RenderPages = () => {
         break;
       case 'Student':
         setDataToRender(studentPannel)
+        break;
+      case 'UNVERIFIED_STUDENT':
+        setDataToRender(UNVERIFIED_STUDENT)
         break;
       default:
         navigate('/features')

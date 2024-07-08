@@ -90,7 +90,7 @@ const studentPannel = [
     status: "inactive",
   },
 ];
-const unRegisterdstudent = [
+const UNVERIFIED_STUDENT = [
   {
     pageName: "Student Dashboard",
     icon: "MdDashboard",
@@ -110,4 +110,4 @@ const unRegisterdstudent = [
     status: "inactive",
   },
 ];
-export { addmission, admitCard, studentPannel, unRegisterdstudent };
+export { addmission, admitCard, studentPannel, UNVERIFIED_STUDENT };
